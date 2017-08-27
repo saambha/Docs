@@ -1,0 +1,21 @@
+Networking code, data parsing code, data adjustments code for the UI presentation,
+app state notifications, UI state changes. All that code imprisoned inside if-ology of a single file
+that cannot be reused and would only fit in this project.
+
+
+The UIViewController is the logical place to start working on your UI code.
+
+In the MVC design pattern,
+View is supposed to be inactive and only displays prepared data on demand.
+Controller should work on the Model data to prepare it for the Views, which then display that data.
+
+UIViewController controls the view.
+
+One of the benefits of using MVVM is testing. Since ViewModel is pure NSObject (or struct for example),
+and it’s not coupled with the UIKit code,
+you can test it more easily in your unit tests without it affecting the UI code.
+
+ViewModel acts as the glue between the Model and View
+
+In the MVVM design pattern, View should not know anything about the Model.
+The only thing that View knows is how to work with a ViewModel.
